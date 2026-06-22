@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { Routes, Route, Link } from "react-router-dom"
-import Home from "./pages/Home"
-import CartPage from "./pages/CartPage"
-import Checkout from "./pages/Checkout"
+import Home from "./Home"
+import CartPage from "./CartPage"
+import Checkout from "./Checkout"
 
 function Navbar({ cartCount }){
   return (
@@ -18,21 +18,5 @@ function Navbar({ cartCount }){
   )
 }
 
-function App(){
-  const [cartItems, setCartItems] = useState([])
+export default Navbar
 
-  const cartCount = cartItems.reduce((total, item) => total + item.qty, 0)
-
-  return (
-    <>
-      <Navbar cartCount={cartCount} />
-      <Routes>
-        <Route path="/" element={<Home cartItems={cartItems} setCartItems={setCartItems} />} />
-        <Route path="/cart" element={<CartPage cartItems={cartItems} setCartItems={setCartItems} />} />
-        <Route path="/checkout" element={<Checkout cartItems={cartItems} setCartItems={setCartItems} />} />
-      </Routes>
-    </>
-  )
-}
-
-export default App
