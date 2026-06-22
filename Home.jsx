@@ -1,4 +1,4 @@
-import ProductList from "../components/ProductList"
+import ProductList from "./ProductList"
 
 function Home({ cartItems, setCartItems }) {
   
@@ -14,8 +14,8 @@ function Home({ cartItems, setCartItems }) {
       }
       return [...prev, { ...product, qty: 1 }]
     })
-  }
-
+  } 
+  
   return (
     <div className="container mt-4">
       <h2 className="mb-4">Shop Products</h2>
